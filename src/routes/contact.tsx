@@ -1,7 +1,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
-import { Section } from "@/components/Section";
+import { Ledger, LedgerRow, Section } from "@/components/Section";
 
 const EMAIL = "hello@yourdomain.com";
 
