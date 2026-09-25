@@ -24,11 +24,9 @@ export default function Nav() {
   return (
     <header className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
       <div className="container nav__inner">
-        <a href="#top" className="nav__wordmark" aria-label="Falcon Creative Works — back to top"><img src="/falcon-logo.png" alt="" className="nav__logo" aria-hidden="true" />
+        <a href="#top" className="nav__wordmark" aria-label="Falcon Creative Works — back to top">
+          <img src="/falcon-logo.png" alt="" className="nav__logo" aria-hidden="true" />
           <span className="nav__wordmark-full">Falcon Creative Works</span>
-          <span className="nav__wordmark-short" aria-hidden="true">
-            Falcon<sup>®</sup>
-          </span>
         </a>
 
         <nav className="nav__links" aria-label="Primary">
