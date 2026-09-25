@@ -192,6 +192,29 @@ function Contact() {
           </div>
         </div>
       </Section>
+
+      <Section index="02" label="Before you write">
+        <Ledger>
+          <LedgerRow
+            n="01"
+            title="Say what you need"
+            note="One honest paragraph beats a formal brief. If you can describe the outcome, the rest is a conversation."
+            slot="message"
+          />
+          <LedgerRow
+            n="02"
+            title="Give a rough date"
+            note="Even 'sometime this spring' is more useful than a deadline invented for the occasion."
+            slot="message"
+          />
+          <LedgerRow
+            n="03"
+            title="Link what already exists"
+            note="An old site, a screenshot, a half-finished document. Anything real helps, and messy is fine."
+            slot="message"
+          />
+        </Ledger>
+      </Section>
     </>
   );
 }
