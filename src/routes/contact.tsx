@@ -210,7 +210,7 @@ function Field({
   label: string;
   placeholder: string;
   value: string;
-  error?: string;
+  error: string | undefined;
   onChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   type?: string;
   rows?: number;
