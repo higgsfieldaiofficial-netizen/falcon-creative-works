@@ -202,6 +202,7 @@
   /* Hairline underline that grows from the left on hover or when active. */
   .underline-sweep {
     position: relative;
+    display: inline-block;
   }
 
   .underline-sweep::after {
@@ -209,7 +210,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -0.35rem;
+    bottom: -0.2rem;
     height: 1px;
     background-color: var(--color-primary);
     transform: scaleX(0);
