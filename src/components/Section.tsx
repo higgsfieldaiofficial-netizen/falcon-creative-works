@@ -19,7 +19,7 @@ export function Section({
     <section className={`border-t border-border ${className}`}>
       <div className="mx-auto grid max-w-6xl gap-8 px-6 py-16 md:grid-cols-12 md:gap-6">
         <div className="md:col-span-3">
-          <p className="label">
+          <p className="label md:pt-1">
             <span className="label-accent">{index}</span>
             <span className="mx-1.5">—</span>
             {label}

@@ -91,7 +91,7 @@ function Home() {
           <div className="rise rise-3 mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
             <Link
               to="/about"
-              className="inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              className="inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3.5 text-sm leading-none font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             >
               Start with the about page
               <span aria-hidden="true">→</span>

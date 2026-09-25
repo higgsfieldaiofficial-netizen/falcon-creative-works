@@ -90,7 +90,7 @@ function Contact() {
             <p className="label">Direct</p>
             <a
               href={`mailto:${EMAIL}`}
-              className="mt-3 block max-w-[22ch] font-display text-3xl leading-tight break-words underline decoration-border underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
+              className="mt-3 block max-w-[22ch] font-display text-3xl leading-tight break-words underline decoration-border underline-offset-[7px] transition-colors hover:text-primary hover:decoration-primary"
             >
               {EMAIL}
             </a>
@@ -128,7 +128,7 @@ function Contact() {
                 <div className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-3">
                   <a
                     href={mailto}
-                    className="inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                    className="inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3.5 text-sm leading-none font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                   >
                     Open it in your email app
                     <span aria-hidden="true">→</span>
@@ -180,7 +180,7 @@ function Contact() {
                 <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3">
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                    className="inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3.5 text-sm leading-none font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                   >
                     Send the note
                     <span aria-hidden="true">→</span>
@@ -255,7 +255,7 @@ function Field({
           onChange={onChange}
           aria-invalid={Boolean(error)}
           aria-describedby={describedBy}
-          className="mt-2 w-full resize-y border-0 border-b border-border bg-transparent px-0 py-3 text-base outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
+          className="mt-2 w-full resize-y border-0 border-b border-border bg-transparent px-0 py-3 text-base outline-none transition-colors placeholder:text-muted-foreground/80 focus:border-primary"
         />
       ) : (
         <input
@@ -267,7 +267,7 @@ function Field({
           onChange={onChange}
           aria-invalid={Boolean(error)}
           aria-describedby={describedBy}
-          className="mt-2 w-full border-0 border-b border-border bg-transparent px-0 py-3 text-base outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
+          className="mt-2 w-full border-0 border-b border-border bg-transparent px-0 py-3 text-base outline-none transition-colors placeholder:text-muted-foreground/80 focus:border-primary"
         />
       )}
       {error ? (
