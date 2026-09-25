@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 import { Section } from "@/components/Section";
@@ -47,7 +47,7 @@ function Contact() {
     `${values.message}\n\n— ${values.name}\n${values.email}`,
   )}`;
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const parsed = messageSchema.safeParse(values);
     if (!parsed.success) {
@@ -65,7 +65,7 @@ function Contact() {
   }
 
   function update(field: Field) {
-    return (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    return (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setValues((current) => ({ ...current, [field]: event.target.value }));
       if (errors[field]) setErrors((current) => ({ ...current, [field]: undefined }));
     };
@@ -211,7 +211,7 @@ function Field({
   placeholder: string;
   value: string;
   error?: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   type?: string;
   rows?: number;
 }) {
