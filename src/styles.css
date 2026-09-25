@@ -218,7 +218,7 @@
   }
 
   .underline-sweep:hover::after,
-  .underline-sweep[data-active="true"]::after {
+  .underline-sweep[data-status="active"]::after {
     transform: scaleX(1);
   }
 }
