@@ -11,7 +11,10 @@ export const Route = createFileRoute("/")({
         content:
           "A blank starter website: home, about and contact pages already built, with the four things you need to swap written out for you.",
       },
-      { property: "og:title", content: "Untitled — start from an honest blank page" },
+      {
+        property: "og:title",
+        content: "Untitled — start from an honest blank page",
+      },
       {
         property: "og:description",
         content:
@@ -38,7 +41,7 @@ const swaps = [
   {
     n: "03",
     title: "The email",
-    note: "A real address in two places: the contact page and the footer. Everything else on this site is decoration until that works.",
+    note: "A real address in two places: the contact page and the footer. Everything else is decoration until that works.",
     slot: "contact · footer",
   },
   {
@@ -48,6 +51,24 @@ const swaps = [
     slot: "footer",
   },
 ];
+
+const pages = [
+  {
+    path: "/",
+    name: "Home",
+    holds: "The headline, the four swaps, and the shape of the site.",
+  },
+  {
+    path: "/about",
+    name: "About",
+    holds: "A short bio, the facts about you, and what the page could hold.",
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    holds: "A message form, an email address, and the links you keep.",
+  },
+] as const;
 
 function Home() {
   return (
@@ -60,8 +81,7 @@ function Home() {
             A starting point
           </p>
           <h1 className="rise rise-1 mt-7 font-display text-[clamp(2.75rem,7.5vw,5.25rem)] leading-[0.94] tracking-tight text-balance">
-            Nothing here yet.{" "}
-            <em className="text-primary">That's the best part.</em>
+            Nothing here yet. <em className="text-primary">That's the best part.</em>
           </h1>
           <p className="rise rise-2 mt-8 max-w-[46ch] text-lg leading-relaxed text-pretty text-muted-foreground">
             Three pages are standing, the type is set, and every block is
@@ -95,9 +115,7 @@ function Home() {
               className="h-full w-full object-cover"
             />
           </div>
-          <figcaption className="label mt-3">
-            A blank sheet, one line on it
-          </figcaption>
+          <figcaption className="label mt-3">A blank sheet, one line on it</figcaption>
         </figure>
       </section>
 
@@ -116,27 +134,11 @@ function Home() {
           rest apart.
         </p>
         <div className="mt-8 border-t border-border">
-          {[
-            {
-              path: "/",
-              name: "Home",
-              holds: "The headline, the four swaps, and the shape of the site.",
-            },
-            {
-              path: "/about",
-              name: "About",
-              holds: "A short bio, the facts about you, and what the page could hold.",
-            },
-            {
-              path: "/contact",
-              name: "Contact",
-              holds: "A message form, an email address, and the links you keep.",
-            },
-          ].map((page) => (
+          {pages.map((page) => (
             <Link
               key={page.path}
               to={page.path}
-              className="group grid gap-1 border-b border-border py-5 transition-colors hover:bg-muted/60 sm:grid-cols-12 sm:items-baseline sm:gap-6"
+              className="grid gap-1 border-b border-border py-5 transition-colors hover:bg-muted/60 sm:grid-cols-12 sm:items-baseline sm:gap-6"
             >
               <span className="font-mono text-xs text-primary sm:col-span-2">
                 {page.path}
