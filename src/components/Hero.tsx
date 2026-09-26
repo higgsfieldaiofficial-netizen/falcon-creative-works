@@ -4,7 +4,7 @@ import Reveal from './Reveal'
 const WHATSAPP = 'https://wa.me/917835941665'
 
 const STATS = [
-  { value: '10+', label: 'brands' },
+  { value: '25+', label: 'brands' },
   { value: '3', label: 'signature formats' },
   { value: '100%', label: 'AI-crafted' },
 ]
