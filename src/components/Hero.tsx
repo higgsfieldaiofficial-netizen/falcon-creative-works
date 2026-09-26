@@ -78,37 +78,95 @@ function Showreel() {
   )
 }
 
+const FLOATERS = [
+  {
+    src: '/videos/product/product-03.mp4',
+    poster: '/posters/product-03.jpg',
+    label: 'Product films',
+    cls: 'float-card--a',
+  },
+  {
+    src: '/videos/ugc/ugc-03.mp4',
+    poster: '/posters/ugc-03.jpg',
+    label: 'AI UGC',
+    cls: 'float-card--b',
+  },
+  {
+    src: '/videos/ugc/ugc-01.mp4',
+    poster: '/posters/ugc-01.jpg',
+    label: 'UGC ads',
+    cls: 'float-card--c',
+  },
+]
+
+function Collage() {
+  return (
+    <div className="hero__collage" aria-hidden="true">
+      {FLOATERS.map((f) => (
+        <div key={f.src} className={`float-card ${f.cls}`}>
+          <video
+            src={f.src}
+            poster={f.poster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            tabIndex={-1}
+          />
+          <span className="float-card__tag">{f.label}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export default function Hero() {
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
       <div className="container">
-        <Reveal>
-          <p className="eyebrow">AI Video Studio — for brands that move</p>
-        </Reveal>
+        <div className="hero__top">
+          <div className="hero__copy">
+            <Reveal>
+              <p className="eyebrow">AI Video Studio — for brands that move</p>
+            </Reveal>
 
-        <Reveal delay={90}>
-          <h1 className="hero__title" id="hero-title">
-            Scroll-stopping films for products people <em>love.</em>
-          </h1>
-        </Reveal>
+            <Reveal delay={90}>
+              <h1 className="hero__mega" id="hero-title">
+                <span className="mega-line">Scroll-stopping</span>
+                <span className="mega-line mega-outline">AI films</span>
+                <span className="mega-line mega-accent">that sell.</span>
+              </h1>
+            </Reveal>
 
-        <Reveal delay={170}>
-          <p className="hero__sub">
-            Falcon Creative Works crafts cinematic product films, property walkthroughs and AI UGC
-            ads — made to make people stop.
-          </p>
-        </Reveal>
+            <Reveal delay={170}>
+              <p className="hero__sub">
+                Falcon Creative Works crafts cinematic product films, property walkthroughs and AI
+                UGC ads — made to make people stop.
+              </p>
+            </Reveal>
 
-        <Reveal delay={240}>
-          <div className="hero__ctas">
-            <a className="btn btn--large" href="#work">
-              See the work
-            </a>
-            <a className="btn btn--large btn--outline" href={WHATSAPP} target="_blank" rel="noopener">
-              WhatsApp us
-            </a>
+            <Reveal delay={240}>
+              <div className="hero__ctas">
+                <a className="btn btn--large" href="#work">
+                  See the work
+                </a>
+                <a
+                  className="btn btn--large btn--outline"
+                  href={WHATSAPP}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  WhatsApp us
+                </a>
+              </div>
+            </Reveal>
           </div>
-        </Reveal>
+
+          <Reveal delay={200}>
+            <Collage />
+          </Reveal>
+        </div>
 
         <Reveal delay={300}>
           <Showreel />

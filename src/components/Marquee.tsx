@@ -1,14 +1,25 @@
-const PHRASE = 'Product films \u2726 AI UGC ads \u2726 Property walkthroughs \u2726 Cinematic grade \u2726 '
-const CHUNK = PHRASE.repeat(3)
+const WORDS = ['Product films', 'AI UGC ads', 'Property walkthroughs', 'Cinematic grade']
+
+function Chunk({ hidden = false }: { hidden?: boolean }) {
+  return (
+    <span className="marquee__chunk" aria-hidden={hidden || undefined}>
+      {Array.from({ length: 3 }).flatMap((_, r) =>
+        WORDS.map((w, i) => (
+          <span key={`${r}-${i}`}>
+            {w} <i>✦</i>
+          </span>
+        )),
+      )}
+    </span>
+  )
+}
 
 export default function Marquee() {
   return (
     <div className="marquee" role="presentation">
       <div className="marquee__track">
-        <span className="marquee__chunk">{CHUNK}</span>
-        <span className="marquee__chunk" aria-hidden="true">
-          {CHUNK}
-        </span>
+        <Chunk />
+        <Chunk hidden />
       </div>
     </div>
   )
